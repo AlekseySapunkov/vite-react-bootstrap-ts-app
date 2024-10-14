@@ -1,34 +1,31 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.scss";
+import React, { useState } from "react";
+import Header from "../components/layouts/Header";
+import Footer from "../components/layouts/Footer";
+import MainContent from "../components/layouts/MainContent";
+import Contacts from "../components/nav/Contacts";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [isContactsVisible, setContactsVisible] = useState(false);
+  const [isMainContextVisible, setMainContextVisible] = useState(true);
+  const setVisibilityContactsHandler = () => {
+    setContactsVisible(true);
+    setMainContextVisible(false);
+  };
+  const setVisibilityMainContextHandler = () => {
+    setContactsVisible(false);
+    setMainContextVisible(true);
+  };
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Header
+        setContactsVisible={setVisibilityContactsHandler}
+        setMainContextVisible={setVisibilityMainContextHandler}
+      />
+      {isContactsVisible && <Contacts />}
+      {isMainContextVisible && <MainContent />}
+      <Footer />
+    </div>
   );
 }
 
