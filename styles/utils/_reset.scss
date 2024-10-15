@@ -1,3 +1,8 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
 *,
 *::before,
 *::after {
@@ -26,11 +31,6 @@ p {
   font-weight: 400;
 }
 
-img,
-picture {
-  display: block;
-  max-width: 100%;
-}
 
 input,
 button,
