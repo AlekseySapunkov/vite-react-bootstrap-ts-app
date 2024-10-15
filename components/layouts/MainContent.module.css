@@ -1,5 +1,5 @@
 main {
-  background-image: url("/src/assets/background.jpg");
+  background-image: url("/public/background.jpg");
   background-size: cover;
 }
 .textAboutMe {
@@ -25,7 +25,7 @@ p {
 .selfie {
   padding: 1em;
   width: 400px;
-  background-image: url("/src/assets/0531a6747575cf83165d312cc1b5f313.jpg");
+  background-image: url("/public/art.jpg");
   background-size: cover;
   min-height: 100%;
 }
@@ -51,11 +51,11 @@ p {
 }
 
 .img1 {
-  background-image: url("/src/assets/-4.jpg");
+  background-image: url("/public/-4.jpg");
   background-size: contain;
 }
 .img3 {
-  background-image: url("/src/assets/bublek-\ \(1\).jpg");
+  background-image: url("/public/bublek-\ \(1\).jpg");
   background-size: 400px 400px;
   background-repeat: no-repeat;
 }
