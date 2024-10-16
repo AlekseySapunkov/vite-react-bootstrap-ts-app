@@ -17,7 +17,7 @@ const Header = (props:any) => {
           <div className={styles.logo}></div>
           <h1>Художник Ксения</h1>
         </div>
-        <nav className={styles.nav}>
+        <nav  className='nav nav-tabs'>
           <a href="" onClick={setVisbilityMainContextHandler}>Главное меню</a>
           <a href="">Обо мне</a>
           <a href="">Мои работы</a>
