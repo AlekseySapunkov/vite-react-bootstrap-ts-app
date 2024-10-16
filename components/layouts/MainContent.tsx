@@ -32,7 +32,7 @@ const MainContent = (props: any) => {
         </div>
         <div className={styles.img}>
           <img
-            src="../../assets/0531a6747575cf83165d312cc1b5f313.jpg"
+            src="public/-4.jpg"
             alt="imageFinger"
           />
         </div>
