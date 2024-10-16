@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
+import {  Nav } from "react-bootstrap";
 const Header = (props:any) => {
 
   const setVisbilityContactsHandler = (event:any) =>{
@@ -17,12 +18,13 @@ const Header = (props:any) => {
           <div className={styles.logo}></div>
           <h1>Художник Ксения</h1>
         </div>
-        <nav  className='nav nav-tabs'>
-          <a href="" onClick={setVisbilityMainContextHandler}>Главное меню</a>
-          <a href="">Обо мне</a>
-          <a href="">Мои работы</a>
-          <a href="" onClick={setVisbilityContactsHandler}>Контакты для связи</a>
-        </nav>
+        <Nav className="justify-content-center" variant="tabs" defaultActiveKey="#home">
+        <Nav.Item>
+            <Nav.Link href="#home" onClick={setVisbilityMainContextHandler}>Главное меню</Nav.Link>
+        </Nav.Item>
+            <Nav.Link href="#features">Мои работы</Nav.Link>
+            <Nav.Link href="#pricing" onClick={setVisbilityContactsHandler}>Контакты для связи</Nav.Link>
+          </Nav>
       </header>
     </React.Fragment>
   );
