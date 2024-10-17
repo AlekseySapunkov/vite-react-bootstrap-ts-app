@@ -1,11 +1,30 @@
 import React from "react"
+import styles from "./MyWorks.module.scss"
 const MyWorks=()=>{
     return (
-       <div> 
-        <p>email: @mail.ru</p>
-        <p>телефон:89534785</p>
-        <p>инста:<a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener">Instagram</a></p>
-        </div>  
+       <React.Fragment>
+                <h1>Мои работы</h1>
+        <div className={styles.wrapper}>
+          <div className={styles.img}>
+            <div title="image" className={styles.img1}></div>
+          </div>
+          <div className={styles.img}>
+            <div title="image" className={styles.img3}></div>
+          </div>
+          <div className={styles.img}>
+            <div title="image" className={styles.img1}></div>
+          </div>
+          <div className={styles.img}>
+            <div title="image" className={styles.img3}></div>
+          </div>
+          <div className={styles.img}>
+            <img
+              src="public/-4.jpg"
+              alt="imageFinger"
+            />
+          </div>
+        </div>
+       </React.Fragment>
     )
     
 }

@@ -11,6 +11,10 @@ const Header = (props:any) => {
     event.preventDefault()
     props.setMainContextVisible()
   }
+  const setVisibilityMyWorksHandler = (event:any) =>{
+    event.preventDefault();
+    props.setMyWorksVisible()
+  }
   return (
     <React.Fragment>
       <header className={styles.header}>
@@ -22,7 +26,7 @@ const Header = (props:any) => {
         <Nav.Item>
             <Nav.Link href="#home" className={styles.navLink} onClick={setVisbilityMainContextHandler}>Главное меню</Nav.Link>
         </Nav.Item>
-            <Nav.Link href="#works" className={styles.navLink}>Мои работы</Nav.Link>
+            <Nav.Link href="#works" className={styles.navLink} onClick={setVisibilityMyWorksHandler}>Мои работы</Nav.Link>
             <Nav.Link href="#contacts" onClick={setVisbilityContactsHandler} className={styles.navLink}>Контакты для связи</Nav.Link>
           </Nav>
       </header>
