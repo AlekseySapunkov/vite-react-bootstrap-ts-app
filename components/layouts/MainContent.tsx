@@ -1,4 +1,4 @@
-import styles from "./MainContent.module.css";
+import styles from "./MainContent.module.scss";
 const MainContent = (props: any) => {
   return (
     <main className={styles.main}>

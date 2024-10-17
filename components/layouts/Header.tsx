@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Header.module.css";
+import styles from "./Header.module.scss";
 import {  Nav } from "react-bootstrap";
 const Header = (props:any) => {
 
@@ -20,10 +20,10 @@ const Header = (props:any) => {
         </div>
         <Nav className="justify-content-center" variant="tabs" defaultActiveKey="#home">
         <Nav.Item>
-            <Nav.Link href="#home" onClick={setVisbilityMainContextHandler}>Главное меню</Nav.Link>
+            <Nav.Link href="#home" className={styles.navLink} onClick={setVisbilityMainContextHandler}>Главное меню</Nav.Link>
         </Nav.Item>
-            <Nav.Link href="#features">Мои работы</Nav.Link>
-            <Nav.Link href="#pricing" onClick={setVisbilityContactsHandler}>Контакты для связи</Nav.Link>
+            <Nav.Link href="#works" className={styles.navLink}>Мои работы</Nav.Link>
+            <Nav.Link href="#contacts" onClick={setVisbilityContactsHandler} className={styles.navLink}>Контакты для связи</Nav.Link>
           </Nav>
       </header>
     </React.Fragment>

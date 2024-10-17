@@ -20,12 +20,14 @@ header {
   max-height: 200px;
   margin-top: 30px;
 }
-header h1 {
-  font-size: 42px;
+header {
+  h1{
+    font-size: 42px;
   color: #fff;
   line-height: 230px;
   text-transform: uppercase;
   font-weight: 100;
+  }
 }
 nav {
   position: absolute;
@@ -54,4 +56,10 @@ p {
   margin-bottom: 2rem;
   line-height: 2;
   color: #7f8c8d;
+}
+.navLink{
+  color: #fff;
+  &:hover{
+    color: #2c3e50;
+  }
 }
