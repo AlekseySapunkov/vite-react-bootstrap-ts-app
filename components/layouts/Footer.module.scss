@@ -17,23 +17,26 @@ ul {
 .footer-col {
   width: 25%;
   padding: 0 15px;
-}
-.footer-col h4 {
-  font-size: 18px;
-  color: #ffffff;
-  margin-bottom: 35px;
-  font-weight: 500;
-  position: relative;
-}
-.footer-col h4::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  background-color: #e91e63;
-  height: 2px;
-  box-sizing: border-box;
-  width: 50px;
+  ul{
+    padding-left: 0%;
+  }
+  h4 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: #e91e63;
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+    }
+  }
 }
 .footer-col ul li:not(:last-child) {
   margin-bottom: 10px;
@@ -65,7 +68,7 @@ ul {
 }
 .footer-col .social-links a:hover {
   color: #24262b;
-  background-color: #ffffff;
+  background-color: white;
 }
 
 .telegram-button {
@@ -83,6 +86,7 @@ ul {
   line-height: 53px; /*центровка иконки в кнопке*/
   font-size: 35px; /*размер иконки*/
   z-index: 9999;
+  cursor: pointer;
 }
 .telegram-button a {
   color: #fff;

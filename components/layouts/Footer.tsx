@@ -1,4 +1,4 @@
-import styles from "./Footer.module.css"
+import styles from "./Footer.module.scss"
 const Footer = () =>{
     return  <footer className={styles.footer}>
     <div className={styles.container}>
@@ -32,8 +32,9 @@ const Footer = () =>{
        <div className={styles['footer-col']}>
          <h4>Подписывайтесь и следите за новостями</h4>
          <div className={styles['social-links']}>
-         <a href="https://t.me/your_name" target="_blank" title="Написать в Telegram" rel="noopener noreferrer"><div className={styles['telegram-button']}><i className={styles['fa fa-telegram']}></i></div></a>
-           <a href="#" target="_blank" title="Instagram" rel="noopener noreferrer"><i className={styles['fab fa-instagram']}></i></a>
+         <a href="https://t.me/your_name" target="_blank" title="Написать в Telegram" rel="noopener noreferrer"><i className={styles['fa fa-telegram']}></i></a>
+        <a href="#" target="_blank" title="Instagram" rel="noopener noreferrer"><i className={styles['fab fa-instagram']}></i></a>
+        <div className={styles['telegram-button']}></div>
          </div>
        </div>
      </div>
