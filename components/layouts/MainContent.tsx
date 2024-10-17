@@ -14,7 +14,12 @@ const MainContent = (props: any) => {
             <br /> Пою, танцую, играю, рисую.
           </p>
         </div>
-        <div className={styles.selfie}></div>
+        <div className={styles.img}>
+            <img
+              src="me.jpg"
+              alt="imageFinger"
+            />
+          </div>
       </div>
     </main>
   );
