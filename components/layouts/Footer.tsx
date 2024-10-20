@@ -1,5 +1,8 @@
 import styles from "./Footer.module.scss"
-const Footer = () =>{
+const Footer = (props:any) =>{
+  const modalHandler = ()=>{
+    props.setModalVisible();
+  }
     return  <footer className={styles.footer}>
     <div className={styles.container}>
      <div className={styles.row}>
@@ -35,7 +38,7 @@ const Footer = () =>{
          <a href="https://t.me/your_name" target="_blank" title="Написать в Telegram" rel="noopener noreferrer" id={styles.telegram}></a>
         <a href="#" target="_blank" title="Instagram" rel="noopener noreferrer" id={styles.instagram}></a>
          </div>
-         <div title="Сделать заказ" className={styles['modal-button']}></div>
+         <div title="Сделать заказ" className={styles['modal-button']} onClick={modalHandler}></div>
        </div>
      </div>
     </div>
