@@ -10,13 +10,11 @@ const ModalWindow = (props:any) =>{
     const [validated, setValidated] = useState(false);
     const handleSubmit = (event:any) => {
       const form = event.currentTarget;
-      console.log(form)
       if (form.checkValidity() === false) {
         event.preventDefault();
         event.stopPropagation();
       }
       setValidated(true);
-      setShow(false);
     };
     const handleClose = () =>{
      setShow(false); 
@@ -35,7 +33,7 @@ const ModalWindow = (props:any) =>{
         </Modal.Header>
         <Modal.Body>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="validationCustom01">
               <Form.Label>Адрес почты</Form.Label>
               <Form.Control
                 type="email"
@@ -65,6 +63,9 @@ const ModalWindow = (props:any) =>{
                 placeholder="89345678789"
                 required
               />
+              <Form.Control.Feedback type="invalid">
+              Пожалуйста напишите корректный Телефон
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
              <Form.Label>Вариант заказа</Form.Label>
@@ -84,20 +85,15 @@ const ModalWindow = (props:any) =>{
         <Form.Check
           required
           label="Выражаю согласие с тем что мои данные будут обработаны сторонним лицом "
-          feedback="You must agree before submitting."
+          feedback="Поставьте галочку если согласны "
           feedbackType="invalid"
         />
       </Form.Group>
+          <Button variant="primary" type="submit">
+            Отправить форму
+          </Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" type="submit">
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
     )
