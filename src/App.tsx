@@ -42,7 +42,7 @@ function App() {
         setMainContextVisible={setVisibilityMainContextHandler}
         setMyWorksVisible={setVisibilityMyWorksHandler}
       />
-      {isContactsVisible && <Contacts />}
+      {isContactsVisible && <Contacts setModalVisible={setModalVisibilityHandler}/>}
       {isMainContextVisible && <MainContent />}
       {isMyWorksVisible && <MyWorks />}
       <Footer setModalVisible={setModalVisibilityHandler}/>
