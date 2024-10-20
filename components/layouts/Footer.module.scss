@@ -49,16 +49,16 @@ ul {
   color: #bbbbbb;
   display: block;
   transition: all 0.3s ease;
-}
-.footer-col ul li a:hover {
-  color: #ffffff;
-  padding-left: 8px;
+  &:hover{
+    color: white;
+    padding-left: 8px;
+  }
 }
 .footer-col .social-links a {
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: white;
   margin: 0 10px 10px 0;
   text-align: center;
   line-height: 40px;
@@ -66,13 +66,16 @@ ul {
   color: #ffffff;
   transition: all 0.5s ease;
 }
-.footer-col .social-links a:hover {
-  color: #24262b;
-  background-color: white;
+#instagram:hover {
+  background-image: url("/instagram.png");
+  background-size: contain;
+}
+#telegram:hover{
+  background-image: url("/telegram.png");
+  background-size: contain;
 }
 
-.telegram-button {
-  font-family: "FontAwesome";
+.modal-button {
   position: fixed;
   right: 13px;
   bottom: 90px;
@@ -87,30 +90,26 @@ ul {
   font-size: 35px; /*размер иконки*/
   z-index: 9999;
   cursor: pointer;
-}
-.telegram-button a {
-  color: #fff;
-}
-.telegram-button:before,
-.telegram-button:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  border: 50%;
-  border: 1px solid #0088cc; /*цвет анимированных волн от кнопки*/
-  left: -20px;
-  right: -20px;
-  top: -20px;
-  bottom: -20px;
-  border-radius: 50%;
-  animation: animate 1.5s linear infinite;
-  opacity: 0;
-  backface-visibility: hidden;
+  &::before,::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    border: 50%;
+    border: 1px solid #0088cc; /*цвет анимированных волн от кнопки*/
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+    backface-visibility: hidden;
+  } 
+  &::after{
+      animation-delay: 0.5s;
+    }
 }
 
-.telegram-button:after {
-  animation-delay: 0.5s;
-}
 
 @keyframes animate {
   0% {
