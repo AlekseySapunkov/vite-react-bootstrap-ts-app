@@ -3,8 +3,8 @@ import { Card } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import Col from 'react-bootstrap/Col';
-import { YMap, YMapDefaultFeaturesLayer, YMapDefaultSchemeLayer, YMapMarker } from "../tools/YandexReactify"
-import styles from "./Contaxts.module.scss"
+import styles from "./Contacts.module.scss"
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 const Contacts = (props: any) => {
   const openModal = () => {
     props.setModalVisible();
@@ -27,15 +27,14 @@ const Contacts = (props: any) => {
         </Col>
         <Col xs={6} md={4}>
           <div className={styles.map}>
-            <YMap location={{ center: [25.229762, 55.289311], zoom: 9 }} mode="vector">
-              <YMapDefaultSchemeLayer />
-              <YMapDefaultFeaturesLayer />
-              <YMapMarker coordinates={[25.229762, 55.289311]} draggable={true}>
-                <section>
-                  <h1>You can drag this header</h1>
-                </section>
-              </YMapMarker>
-            </YMap></div>
+            <YMaps>
+              <div>
+                <Map defaultState={{ center: [41.887064, 12.504809], zoom: 9 }}>
+                  <Placemark geometry={[41.887064, 12.504809]} />
+                </Map>
+              </div>
+            </YMaps>
+          </div>
         </Col>
       </Row>
     </Container>
