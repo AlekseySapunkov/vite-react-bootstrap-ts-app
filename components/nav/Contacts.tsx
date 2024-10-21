@@ -13,7 +13,7 @@ const Contacts = (props: any) => {
 
     <Container fluid style={{ padding: "30px" }}>
       <Row>
-        <Col xs={10} md={8}>
+        <Col lg={true} className={styles.card}>
           <Card>
             <Card.Header>Как связаться со мной</Card.Header>
             <Card.Body>
@@ -25,14 +25,12 @@ const Contacts = (props: any) => {
             </Card.Body>
           </Card>
         </Col>
-        <Col xs={6} md={4}>
+        <Col lg={true}>
           <div className={styles.map}>
             <YMaps>
-              <div>
-                <Map defaultState={{ center: [41.887064, 12.504809], zoom: 9 }}>
-                  <Placemark geometry={[41.887064, 12.504809]} />
-                </Map>
-              </div>
+              <Map defaultState={{ center: [41.887064, 12.504809], zoom: 9 }} width={"auto"}>
+                <Placemark geometry={[41.887064, 12.504809]} />
+              </Map>
             </YMaps>
           </div>
         </Col>
