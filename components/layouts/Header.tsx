@@ -13,6 +13,9 @@ const Header = (props: any) => {
   const setVisibilityMyWorksHandler = (event: any) => {
     navigate('/works', { replace: false })
   }
+  const setVisibilityFAQ = (event: any) => {
+    navigate('/FAQ', { replace: false })
+  }
   return (
     <React.Fragment>
       <header className={styles.header}>
@@ -24,8 +27,15 @@ const Header = (props: any) => {
           <Nav.Item>
             <Nav.Link href="/" className={styles.navLink} onClick={setVisbilityMainContextHandler}>Главное меню</Nav.Link>
           </Nav.Item>
-          <Nav.Link href="works" className={styles.navLink} onClick={setVisibilityMyWorksHandler}>Мои работы</Nav.Link>
-          <Nav.Link href="contacts" onClick={setVisbilityContactsHandler} className={styles.navLink}>Контакты для связи</Nav.Link>
+          <Nav.Item>
+            <Nav.Link href="works" className={styles.navLink} onClick={setVisibilityMyWorksHandler}>Мои работы</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="contacts" onClick={setVisbilityContactsHandler} className={styles.navLink}>Контакты для связи</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="faq" onClick={setVisibilityFAQ} className={styles.navLink}>FAQ</Nav.Link>
+          </Nav.Item>
         </Nav>
       </header>
       <Outlet />

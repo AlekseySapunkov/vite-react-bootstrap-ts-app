@@ -17,11 +17,10 @@ const Footer = (props: any) => {
         <div className={styles['footer-col']}>
           <h4>Помощь</h4>
           <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Покупка</a></li>
-            <li><a href="#">Статус товара</a></li>
-            <li><a href="#">Варианты оплаты</a></li>
-            <li><a href="#">Скидки, промоакции</a></li>
+            <li><a href="faq">Покупка</a></li>
+            <li><a href="faq">Статус товара</a></li>
+            <li><a href="faq">Варианты оплаты</a></li>
+            <li><a href="faq">Скидки, промоакции</a></li>
           </ul>
         </div>
         <div className={styles['footer-col']}>

@@ -6,6 +6,7 @@ import MainContent from "../components/layouts/MainContent";
 import Contacts from "../components/nav/Contacts";
 import MyWorks from "../components/nav/MyWorks";
 import ModalWindow from "../components/UI/ModalWindow";
+import FAQ from "../components/nav/FAQ"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={<MainContent />} />
           <Route path="contacts" element={<Contacts setModalVisible={setModalVisibilityHandler} />} />
           <Route path="works" element={<MyWorks />} />
+          <Route path="faq" element={<FAQ />} />
         </Routes>
         <Footer setModalVisible={setModalVisibilityHandler} />
       </React.Fragment>
