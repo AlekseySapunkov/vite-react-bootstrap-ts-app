@@ -7,20 +7,14 @@ const MyWorks = () => {
       <div className={styles.wrapper}>
         <div className={styles.img}>
           <img
-            src="public/-4.jpg"
-            alt="imageFinger"
-          />
-        </div>
-        <div className={styles.img}>
-          <img
             src="/home.jpg"
-            alt="imageFinger"
+            alt="home"
           />
         </div>
         <div className={styles.img}>
           <img
             src="/bublek-ukazatel-tsk2.jpg"
-            alt="imageFinger"
+            alt="ukazatel"
           />
         </div>
         <div className={styles.img}>
@@ -31,8 +25,8 @@ const MyWorks = () => {
         </div>
         <div className={styles.img}>
           <img
-            src="public/-4.jpg"
-            alt="imageFinger"
+            src="/art.jpg"
+            alt="art"
           />
         </div>
       </div>

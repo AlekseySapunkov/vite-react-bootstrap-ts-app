@@ -28,7 +28,7 @@ const Footer = (props: any) => {
           <h4>Подписывайтесь и следите за новостями</h4>
           <div className={styles['social-links']}>
             <a href="https://t.me/your_name" target="_blank" title="Написать в Telegram" rel="noopener noreferrer" id={styles.telegram}></a>
-            <a href="#" target="_blank" title="Instagram" rel="noopener noreferrer" id={styles.instagram}></a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram" rel="noopener noreferrer" id={styles.instagram}></a>
           </div>
           <div title="Сделать заказ" className={styles['modal-button']} onClick={modalHandler}></div>
         </div>
