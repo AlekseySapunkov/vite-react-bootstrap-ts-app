@@ -11,7 +11,7 @@ const Header = (props: any) => {
     navigate('/', { replace: false })
   }
   const setVisibilityMyWorksHandler = (event: any) => {
-    navigate('/', { replace: false })
+    navigate('/works', { replace: false })
   }
   return (
     <React.Fragment>
@@ -20,7 +20,7 @@ const Header = (props: any) => {
           <div className={styles.logo}></div>
           <h1>Художник Ксения</h1>
         </div>
-        <Nav className="justify-content-center" variant="tabs" defaultActiveKey="#home">
+        <Nav className="justify-content-center" variant="tabs" defaultActiveKey="/">
           <Nav.Item>
             <Nav.Link href="/" className={styles.navLink} onClick={setVisbilityMainContextHandler}>Главное меню</Nav.Link>
           </Nav.Item>
