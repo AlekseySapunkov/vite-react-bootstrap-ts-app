@@ -20,7 +20,7 @@ const Header = (props: any) => {
           <div className={styles.logo}></div>
           <h1>Художник Ксения</h1>
         </div>
-        <Nav className="justify-content-center" variant="tabs" defaultActiveKey="/">
+        <Nav className="justify-content-center" variant="tabs" >
           <Nav.Item>
             <Nav.Link href="/" className={styles.navLink} onClick={setVisbilityMainContextHandler}>Главное меню</Nav.Link>
           </Nav.Item>
