@@ -13,13 +13,16 @@ const MainContent = (props: any) => {
             жизни.
             <br /> Пою, танцую, играю, рисую.
           </p>
+          <p>Я провожу мастер класы, рисую картины маслом <br />
+            А еще я могу делать афигенные 2d и 3d изображения.
+          </p>
         </div>
         <div className={styles.img}>
-            <img
-              src="me.jpg"
-              alt="imageFinger"
-            />
-          </div>
+          <img
+            src="me.jpg"
+            alt="imageFinger"
+          />
+        </div>
       </div>
     </main>
   );

@@ -9,8 +9,8 @@ const Footer = (props: any) => {
         <div className={styles['footer-col']}>
           <h4>Я и мои работы</h4>
           <ul>
-            <li><a href="#">Обо мне</a></li>
-            <li><a href="#">Мои услуги</a></li>
+            <li><a href="/">Обо мне</a></li>
+            <li><a href="/">Мои услуги</a></li>
             <li><a href="works">Примеры работ</a></li>
           </ul>
         </div>
