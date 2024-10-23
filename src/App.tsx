@@ -7,6 +7,7 @@ import Contacts from "../components/nav/Contacts";
 import MyWorks from "../components/nav/MyWorks";
 import ModalWindow from "../components/UI/ModalWindow";
 import FAQ from "../components/nav/FAQ"
+import NotFound from "../components/layouts/NotFound"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -20,8 +21,13 @@ function App() {
   }
   return (
     <BrowserRouter>
-
+      <Routes>
+        <Route path="" element={<NotFound />} /> // empty ""
+        <Route path="*" element={<NotFound />} /> // star *
+        <Route element={<NotFound />} /> // without path
+      </Routes>
       <React.Fragment>
+
         {isModalVisible && <ModalWindow setModalVisible={setModalVisibilityHandler} />}
         <Header />
         <Routes>
@@ -29,6 +35,7 @@ function App() {
           <Route path="contacts" element={<Contacts setModalVisible={setModalVisibilityHandler} />} />
           <Route path="works" element={<MyWorks />} />
           <Route path="faq" element={<FAQ />} />
+
         </Routes>
         <Footer setModalVisible={setModalVisibilityHandler} />
       </React.Fragment>
