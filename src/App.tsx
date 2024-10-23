@@ -21,16 +21,13 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="" element={<NotFound />} /> // empty ""
-        <Route path="*" element={<NotFound />} /> // star *
-        <Route element={<NotFound />} /> // without path
-      </Routes>
       <React.Fragment>
-
         {isModalVisible && <ModalWindow setModalVisible={setModalVisibilityHandler} />}
         <Header />
         <Routes>
+          <Route path="" element={<NotFound />} /> // empty ""
+          <Route path="*" element={<NotFound />} /> // star *
+          <Route element={<NotFound />} /> // without path
           <Route path="/" element={<MainContent />} />
           <Route path="contacts" element={<Contacts setModalVisible={setModalVisibilityHandler} />} />
           <Route path="works" element={<MyWorks />} />
