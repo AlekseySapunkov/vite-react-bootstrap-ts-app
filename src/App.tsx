@@ -25,7 +25,6 @@ function App() {
         {isModalVisible && <ModalWindow setModalVisible={setModalVisibilityHandler} />}
         <Header />
         <Routes>
-          <Route path="" element={<NotFound />} /> // empty ""
           <Route path="*" element={<NotFound />} /> // star *
           <Route element={<NotFound />} /> // without path
           <Route path="/" element={<MainContent />} />
