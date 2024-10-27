@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import { Nav } from "react-bootstrap";
 import { Outlet, useNavigate } from 'react-router-dom';
+import HeaderButton from "../UI/HeaderButton";
 const Header = (props: any) => {
+  const [isMenuVisible, setMenuVisible] = useState(false);
   const navigate = useNavigate();
   const setVisbilityContactsHandler = (event: any) => {
     navigate('/contacts', { replace: false })
@@ -23,6 +25,7 @@ const Header = (props: any) => {
           <div className={styles.logo}></div>
           <h1>Художник Ксения</h1>
         </div>
+        {isMenuVisible && <HeaderButton />}
         <Nav className="justify-content-center" variant="tabs" >
           <Nav.Item>
             <Nav.Link href="/" className={styles.navLink} onClick={setVisbilityMainContextHandler}>Главное меню</Nav.Link>
