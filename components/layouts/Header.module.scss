@@ -43,8 +43,23 @@ p {
 }
 
 .navbar {
-  text-decoration: none;
   justify-content: center;
+}
+
+nav {
+  button {
+    margin-bottom: 10px;
+    border: none;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    &::after,
+    ::before {
+      border: none;
+    }
+  }
 }
 
 .navLink {

@@ -24,7 +24,7 @@ const Header = (props: any) => {
           <div className={styles.logo}></div>
           <h1>Художник Ксения</h1>
         </div>
-        <Navbar expand="lg" className={styles.navbar}>
+        <Navbar expand="lg" className={styles.navbar} >
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-center" variant="tabs">
