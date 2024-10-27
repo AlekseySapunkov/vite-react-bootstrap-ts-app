@@ -2,63 +2,40 @@ main {
   background-color: white;
   background-size: cover;
 }
+
 .textAboutMe {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 1em;
 }
+
 h1 {
   margin-bottom: 30px;
   text-align: center;
 }
+
 p {
   text-align: center;
   color: rgb(16, 21, 19);
 }
+
 .introduction {
   justify-content: space-around;
   padding-top: 20px;
-  display: flex;
   margin-bottom: 40px;
 }
-.selfie {
-  padding: 1em;
-  width: 400px;
-  background-image: url("/art.jpg");
-  background-size: cover;
-  min-height: 100%;
-}
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1em;
-}
+
 .img {
   margin: auto;
   width: 400px;
   height: 400px;
   overflow: hidden;
   margin-bottom: 1em;
+
   img {
     width: 100%;
     height: auto;
     object-fit: contain;
   }
-}
-.img  {
-  div{
-  min-height: 100%;
-}
-  
-}
-
-.img1 {
-  background-image: url("/-4.jpg");
-  background-size: contain;
-}
-.img3 {
-  background-image: url("/bublek-\ \(1\).jpg");
-  background-size: 400px 400px;
-  background-repeat: no-repeat;
 }
