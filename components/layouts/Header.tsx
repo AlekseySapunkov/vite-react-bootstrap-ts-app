@@ -21,11 +21,11 @@ const Header = () => {
     <React.Fragment>
       <header className={styles.header}>
         <Container>
-          <Row>
-            <Col >
+          <Row >
+            <Col className={styles.imgLogo}>
               <div className={styles.logo}></div>
             </Col>
-            <Col><h1>Художник Ксения</h1></Col>
+            <Col ><h1>Художник Ксения</h1></Col>
           </Row>
 
 
