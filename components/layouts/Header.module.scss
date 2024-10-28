@@ -16,6 +16,10 @@ header {
   }
 }
 
+.h1 {
+  justify-content: center;
+}
+
 .logo {
   background-image: url("/public/art.jpg");
   background-size: cover;
@@ -45,18 +49,27 @@ p {
 
 .navbar {
   justify-content: center;
-}
+  margin-top: 20px;
+  text-decoration: none;
+  border: none;
 
-nav {
   button {
     margin-bottom: 10px;
-    border: none;
+
+
 
     &:hover {
-      background-color: #fff;
+      border-color: #fff;
     }
+
+    &:focus {
+      box-shadow: none;
+      border-color: #fff;
+    }
+
   }
 }
+
 
 .navLink {
   color: #fff;

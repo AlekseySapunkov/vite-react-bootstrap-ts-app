@@ -25,15 +25,13 @@ const Header = () => {
             <Col className={styles.imgLogo}>
               <div className={styles.logo}></div>
             </Col>
-            <Col ><h1>Художник Ксения</h1></Col>
+            <Col className={styles.h1}><h1>Художник Ксения</h1></Col>
           </Row>
-
-
         </Container>
         <Navbar expand="lg" className={styles.navbar} >
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
-            <Nav fill variant="tabs" >
+            <Nav fill variant="pills">
               <Nav.Item>
                 <Nav.Link href="/" className={styles.navLink} onClick={setVisbilityMainContextHandler}>Главное меню</Nav.Link>
               </Nav.Item>
