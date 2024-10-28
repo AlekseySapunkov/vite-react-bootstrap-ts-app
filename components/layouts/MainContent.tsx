@@ -1,6 +1,6 @@
 import styles from "./MainContent.module.scss";
 import { Container, Row, Col } from "react-bootstrap";
-const MainContent = (props: any) => {
+const MainContent = () => {
   return (
     <main className={styles.main}>
       <Container className={styles.introduction}>

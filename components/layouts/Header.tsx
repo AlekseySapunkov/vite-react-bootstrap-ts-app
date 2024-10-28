@@ -3,18 +3,18 @@ import styles from "./Header.module.scss";
 import { Nav } from "react-bootstrap";
 import { Outlet, useNavigate } from 'react-router-dom';
 import { Navbar } from "react-bootstrap";
-const Header = (props: any) => {
+const Header = () => {
   const navigate = useNavigate();
-  const setVisbilityContactsHandler = (event: any) => {
+  const setVisbilityContactsHandler = () => {
     navigate('/contacts', { replace: false })
   }
-  const setVisbilityMainContextHandler = (event: any) => {
+  const setVisbilityMainContextHandler = () => {
     navigate('/', { replace: false })
   }
-  const setVisibilityMyWorksHandler = (event: any) => {
+  const setVisibilityMyWorksHandler = () => {
     navigate('/works', { replace: false })
   }
-  const setVisibilityFAQ = (event: any) => {
+  const setVisibilityFAQ = () => {
     navigate('/FAQ', { replace: false })
   }
   return (
