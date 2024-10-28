@@ -1,32 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 .container {
   max-width: 1170px;
   margin: auto;
 }
+
 .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
+
 ul {
   list-style: none;
 }
+
 .footer {
   background-color: #27282b;
   padding: 70px 0;
 }
+
 .footer-col {
   width: 25%;
   padding: 0 15px;
-  ul{
+
+  ul {
     padding-left: 0%;
   }
+
   h4 {
     font-size: 18px;
     color: #ffffff;
     margin-bottom: 35px;
     font-weight: 500;
     position: relative;
-    &::before{
+
+    &::before {
       content: "";
       position: absolute;
       left: 0;
@@ -38,9 +47,11 @@ ul {
     }
   }
 }
+
 .footer-col ul li:not(:last-child) {
   margin-bottom: 10px;
 }
+
 .footer-col ul li a {
   font-size: 16px;
   color: #ffffff;
@@ -49,11 +60,13 @@ ul {
   color: #bbbbbb;
   display: block;
   transition: all 0.3s ease;
-  &:hover{
+
+  &:hover {
     color: white;
     padding-left: 8px;
   }
 }
+
 .footer-col .social-links a {
   display: inline-block;
   height: 40px;
@@ -66,11 +79,13 @@ ul {
   color: #ffffff;
   transition: all 0.5s ease;
 }
+
 #instagram:hover {
   background-image: url("/instagram.png");
   background-size: contain;
 }
-#telegram:hover{
+
+#telegram:hover {
   background-image: url("/telegram.png");
   background-size: contain;
 }
@@ -80,22 +95,30 @@ ul {
   right: 13px;
   bottom: 90px;
   transform: translate(-50%, -50%);
-  background: #0088cc; /*цвет кнопки*/
+  background: #0088cc;
+  /*цвет кнопки*/
   border-radius: 50%;
-  width: 55px; /*ширина кнопки*/
-  height: 55px; /*высота кнопки*/
+  width: 55px;
+  /*ширина кнопки*/
+  height: 55px;
+  /*высота кнопки*/
   color: #fff;
   text-align: center;
-  line-height: 53px; /*центровка иконки в кнопке*/
-  font-size: 35px; /*размер иконки*/
+  line-height: 53px;
+  /*центровка иконки в кнопке*/
+  font-size: 35px;
+  /*размер иконки*/
   z-index: 9999;
   cursor: pointer;
-  &::before,::after{
+
+  &::before,
+  ::after {
     content: " ";
     display: block;
     position: absolute;
     border: 50%;
-    border: 1px solid #0088cc; /*цвет анимированных волн от кнопки*/
+    border: 1px solid #0088cc;
+    /*цвет анимированных волн от кнопки*/
     left: -20px;
     right: -20px;
     top: -20px;
@@ -104,10 +127,11 @@ ul {
     animation: animate 1.5s linear infinite;
     opacity: 0;
     backface-visibility: hidden;
-  } 
-  &::after{
-      animation-delay: 0.5s;
-    }
+  }
+
+  &::after {
+    animation-delay: 0.5s;
+  }
 }
 
 
@@ -116,9 +140,11 @@ ul {
     transform: scale(0.5);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     transform: scale(1.2);
     opacity: 0;
@@ -128,19 +154,24 @@ ul {
 /*responsive*/
 @media (max-width: 800px) {
   .telegram-button {
-    bottom: 5px; /*отступ кнопки снизу от экрана*/
-    left: 70px; /*отступ кнопки слева от экрана(right - справа)*/
+    bottom: 5px;
+    /*отступ кнопки снизу от экрана*/
+    left: 70px;
+    /*отступ кнопки слева от экрана(right - справа)*/
   }
 }
+
 @media (max-width: 767px) {
   .footer {
     padding-bottom: 5px;
   }
+
   .footer-col {
     width: 50%;
     margin-bottom: 30px;
   }
 }
+
 @media (max-width: 574px) {
   .footer-col {
     width: 100%;
