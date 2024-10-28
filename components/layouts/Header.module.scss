@@ -10,14 +10,16 @@ header {
   h1 {
     font-size: 40px;
     color: #fff;
-    line-height: 100px;
+    line-height: 80px;
     text-transform: uppercase;
     font-weight: 100;
+    margin: 0;
+    align-self: center;
   }
 }
 
 .h1 {
-  justify-content: center;
+  display: flex;
 }
 
 .logo {
@@ -41,11 +43,6 @@ h2 {
   color: #2c3e50;
 }
 
-p {
-  margin-bottom: 2rem;
-  line-height: 2;
-  color: #7f8c8d;
-}
 
 .navbar {
   justify-content: center;
