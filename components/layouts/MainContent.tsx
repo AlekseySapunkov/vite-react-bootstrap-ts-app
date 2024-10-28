@@ -5,7 +5,7 @@ const MainContent = () => {
     <main className={styles.main}>
       <Container className={styles.introduction}>
         <Row>
-          <Col className={styles.textAboutMe} xs={12} md={8}>
+          <Col className={styles.textAboutMe} sm={12} xs={12} lg={6} md={6}>
             <h1>Коротко обо мне</h1>
             <p>
               Привет! Меня зовут Ксения Сидорова.
