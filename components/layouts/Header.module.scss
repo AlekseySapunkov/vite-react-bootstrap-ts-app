@@ -54,11 +54,6 @@ nav {
     &:hover {
       background-color: #fff;
     }
-
-    &::after,
-    ::before {
-      border: none;
-    }
   }
 }
 
