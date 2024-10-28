@@ -32,8 +32,8 @@ const Header = () => {
         </Container>
         <Navbar expand="lg" className={styles.navbar} >
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="justify-content-center" variant="tabs">
+          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
+            <Nav fill variant="tabs" >
               <Nav.Item>
                 <Nav.Link href="/" className={styles.navLink} onClick={setVisbilityMainContextHandler}>Главное меню</Nav.Link>
               </Nav.Item>
