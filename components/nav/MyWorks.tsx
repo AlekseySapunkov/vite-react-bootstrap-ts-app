@@ -25,7 +25,7 @@ const MyWorks = () => {
         </div>
         <div className={styles.img}>
           <img
-            src="/art.jpg"
+            src="/home.jpg"
             alt="art"
           />
         </div>
