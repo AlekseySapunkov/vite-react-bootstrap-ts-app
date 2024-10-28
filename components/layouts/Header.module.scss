@@ -8,25 +8,21 @@ header {
   top: 0;
 
   h1 {
-    font-size: 42px;
+    font-size: 40px;
     color: #fff;
-    line-height: 230px;
+    line-height: 200px;
     text-transform: uppercase;
     font-weight: 100;
   }
-}
-
-.logoAndIntro {
-  display: flex;
-  justify-content: space-around;
 }
 
 .logo {
   background-image: url("/public/art.jpg");
   background-size: cover;
   width: 200px;
-  max-height: 200px;
+  height: 200px;
   margin-top: 30px;
+  border-radius: 3px;
 }
 
 h2 {

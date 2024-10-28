@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.scss";
-import { Nav } from "react-bootstrap";
+import { Nav, Row, Col, Container } from "react-bootstrap";
 import { Outlet, useNavigate } from 'react-router-dom';
 import { Navbar } from "react-bootstrap";
 const Header = () => {
@@ -20,10 +20,16 @@ const Header = () => {
   return (
     <React.Fragment>
       <header className={styles.header}>
-        <div className={styles.logoAndIntro}>
-          <div className={styles.logo}></div>
-          <h1>Художник Ксения</h1>
-        </div>
+        <Container>
+          <Row>
+            <Col >
+              <div className={styles.logo}></div>
+            </Col>
+            <Col><h1>Художник Ксения</h1></Col>
+          </Row>
+
+
+        </Container>
         <Navbar expand="lg" className={styles.navbar} >
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
