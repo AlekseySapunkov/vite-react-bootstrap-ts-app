@@ -9,9 +9,7 @@
     "build": "tsc -b && vite build && shx cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview",
-    "serve": "json-server --watch ./server/database/data.json  --port 3001",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "serve": "json-server --watch ./server/database/data.json  --port 3001"
   },
   "dependencies": {
     "@pbe/react-yandex-maps": "^1.2.5",
