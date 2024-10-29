@@ -14,14 +14,14 @@ const Contacts = (props: any) => {
     <Container fluid style={{ padding: "30px" }}>
       <Row>
         <Col lg={true} className={styles.card}>
-          <Card>
+          <Card className="text-center">
             <Card.Header>Как связаться со мной</Card.Header>
             <Card.Body>
               <Card.Text>
                 <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener">Instagram</a><br></br>
                 <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener">Instagram</a>
               </Card.Text>
-              <Button style={{ background: "#0088cc", color: "white", width: "150px" }} variant="info" onClick={openModal}>Оставить заявку</Button>
+              <Button style={{ background: "#0088cc", color: "white", width: "150px", marginTop: "10px" }} variant="info" onClick={openModal}>Оставить заявку</Button>
             </Card.Body>
           </Card>
         </Col>
