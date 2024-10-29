@@ -19,7 +19,7 @@ const MyWorks = () => {
         </div>
         <div className={styles.img}>
           <img
-            src="public/-4.jpg"
+            src="/-4.jpg"
             alt="imageFinger"
           />
         </div>
