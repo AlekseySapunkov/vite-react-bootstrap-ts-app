@@ -11,4 +11,4 @@
 1. Install yarn: [yarn guide](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
 2. Clone repository using Git: git clone git@host:username/repository.git
 3. Install dependencies using command: yarn install
-4. Run the program using in developer mode: yarn dev
+4. Run the program in developer mode: yarn dev
