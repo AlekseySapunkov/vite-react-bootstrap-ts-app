@@ -9,6 +9,6 @@ Currently, two official plugins are available:
 
 ## Example
 
-[website page] (https://vite-react-bootstrap-ts-app.vercel.app/)
+[website page](https://vite-react-bootstrap-ts-app.vercel.app/)
 
 
