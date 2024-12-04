@@ -9,8 +9,27 @@ import ModalWindow from "../components/UI/ModalWindow";
 import FAQ from "../components/nav/FAQ";
 import NotFound from "../components/layouts/NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 
 function App() {
+  const [state, setState] = useState(null);
+
+  const callBackendAPI = async () => {
+    const response = await fetch('/express_backend');
+    const body = await response.json();
+
+    if (response.status !== 200) {
+      throw Error(body.message)
+    }
+    return body;
+  };
+  
+  // получение GET маршрута с сервера Express, который соответствует GET из server.js 
+  useEffect(() => {
+    callBackendAPI()
+    .then(res => setState(res.express))
+    .catch(err => console.log(err));
+  }, [])
   const [isModalVisible, setModalVisible] = useState(false);
   const setModalVisibilityHandler = () => {
     setModalVisible(true);
