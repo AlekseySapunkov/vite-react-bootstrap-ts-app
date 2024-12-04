@@ -15,20 +15,20 @@ function App() {
   const [state, setState] = useState(null);
 
   const callBackendAPI = async () => {
-    const response = await fetch('/express_backend');
+    const response = await fetch('/api/express_backend');
+    console.log(response)
     const body = await response.json();
-
     if (response.status !== 200) {
       throw Error(body.message)
     }
     return body;
   };
-  
+
   // получение GET маршрута с сервера Express, который соответствует GET из server.js 
   useEffect(() => {
     callBackendAPI()
-    .then(res => setState(res.express))
-    .catch(err => console.log(err));
+      .then(res => setState(res.express))
+      .catch(err => console.log(err));
   }, [])
   const [isModalVisible, setModalVisible] = useState(false);
   const setModalVisibilityHandler = () => {
@@ -56,8 +56,12 @@ function App() {
           <Route path="faq" element={<FAQ />} />
         </Routes>
         <Footer setModalVisible={setModalVisibilityHandler} />
+        <div>
+          {state}
+        </div>
       </React.Fragment>
     </BrowserRouter>
+
   );
 }
 
