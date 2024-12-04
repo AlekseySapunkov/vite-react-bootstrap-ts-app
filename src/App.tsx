@@ -16,7 +16,6 @@ function App() {
 
   const callBackendAPI = async () => {
     const response = await fetch('/api/express_backend');
-    console.log(response)
     const body = await response.json();
     if (response.status !== 200) {
       throw Error(body.message)
