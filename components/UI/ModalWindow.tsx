@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
@@ -7,42 +7,55 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import axios from "axios";
 const ModalWindow = (props: any) => {
   const [show, setShow] = useState(true);
+  const [isButtonDisabled, setButtonDisabled] = useState(true);
   const [dropdownTitle, setVariant] = useState("Варианты");
   const [validated, setValidated] = useState(false);
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
-  const [mail, setMail] = useState("Варианты");
-  const [phone, setPhone] = useState(false);
+  const [mail, setMail] = useState('');
+  const [phone, setPhone] = useState('');
+  const handleInput = (event: any) => {
+    const value = event.target.value;
+    switch (event.target.title) {
+      case "mail":
+        setMail(value)
+        break;
+      case "name":
+        setName(value)
+        break;
+      case "phone":
+        setPhone(value)
+        break;
+    }
+  }
   const handleSubmit = async (event: any) => {
+    event.preventDefault()
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+    console.log(form)
+    if (form.checkValidity() === true) {
+      setValidated(true);
+      setButtonDisabled(false)
     }
-    setValidated(true);
-    setName();
-    setMail();
-    setPhone();
+    const data = {
+      name: name,
+      email: mail,
+      mobileNumber: phone,
+      orderType: dropdownTitle,
+    }
     try {
-      let res = await fetch("/api/express_backend", {
-        method: "POST",
-        body: JSON.stringify({
-          name: name,
-          email: mail,
-          mobileNumber: phone,
-          orderType: dropdownTitle,
-        }),
+      const response = await axios.post('http://localhost:5000/form', data, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
-      const resJson = await res.json();
-      if (res.status === 200) {
-        setMessage("User created successfully");
-      } else {
-        setMessage("Some error occured");
-      }
-    } catch (err) {
-      console.log(err);
+      setMessage('Ваш запрос успешно доставлен');
+      console.log(response);
+    } catch (error) {
+      setMessage('Произошла ошибка при отправке запроса. Пожалуйста, попробуйте еще раз.');
+      console.error(error);
     }
-  };
+  }
+
   const handleClose = () => {
     setShow(false);
     props.setModalVisible();
@@ -51,7 +64,7 @@ const ModalWindow = (props: any) => {
     event.preventDefault();
     setVariant(event.target.title);
   };
-  useEffect(() => { }, []);
+
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -65,8 +78,8 @@ const ModalWindow = (props: any) => {
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
-                id="mail"
-                onChange={setMail}
+                title="mail"
+                onChange={handleInput}
                 required
                 autoFocus
               />
@@ -78,9 +91,10 @@ const ModalWindow = (props: any) => {
               <Form.Label>Имя</Form.Label>
               <Form.Control
                 type="text"
+                title="name"
                 placeholder="Иванов Иван"
+                onChange={handleInput}
                 required
-                id="name"
               />
               <Form.Control.Feedback type="invalid">
                 Пожалуйста напишите корректное имя
@@ -88,7 +102,7 @@ const ModalWindow = (props: any) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
               <Form.Label>Телефон</Form.Label>
-              <Form.Control type="tel" placeholder="89345678789" required />
+              <Form.Control type="tel" placeholder="89345678789" title="phone" onChange={handleInput} required />
               <Form.Control.Feedback type="invalid">
                 Пожалуйста напишите корректный Телефон
               </Form.Control.Feedback>
@@ -140,11 +154,11 @@ const ModalWindow = (props: any) => {
                 feedbackType="invalid"
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" id="submitButton" disabled={isButtonDisabled}>
               Отправить форму
             </Button>
-            <div>{message}</div>
           </Form>
+          <div>{message}</div>
         </Modal.Body>
       </Modal>
     </>
