@@ -7,7 +7,6 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import postFormApi from "../../src/apiForm";
 const ModalWindow = (props: any) => {
   const [show, setShow] = useState(true);
-  const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [dropdownTitle, setVariant] = useState("Варианты");
   const [validated, setValidated] = useState(false);
   const [message, setMessage] = useState("");
@@ -153,7 +152,7 @@ const ModalWindow = (props: any) => {
                 feedbackType="invalid"
               />
             </Form.Group>
-            <Button variant="primary" type="submit" id="submitButton" disabled={isButtonDisabled}>
+            <Button variant="primary" type="submit" id="submitButton" >
               Отправить форму
             </Button>
           </Form>
