@@ -13,7 +13,7 @@ const ModalWindow = (props: any) => {
   const [name, setName] = useState("");
   const [mail, setMail] = useState('');
   const [phone, setPhone] = useState('');
-  const handleInput = (event: any) => {
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     switch (event.target.title) {
       case "mail":
