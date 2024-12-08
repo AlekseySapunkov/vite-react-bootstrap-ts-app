@@ -7,7 +7,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import axios from "axios";
 const ModalWindow = (props: any) => {
   const [show, setShow] = useState(true);
-  const [isButtonDisabled, setButtonDisabled] = useState(true);
+  const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [dropdownTitle, setVariant] = useState("Варианты");
   const [validated, setValidated] = useState(false);
   const [message, setMessage] = useState("");
@@ -29,32 +29,35 @@ const ModalWindow = (props: any) => {
     }
   }
   const handleSubmit = async (event: any) => {
-    event.preventDefault()
     const form = event.currentTarget;
-    console.log(form)
-    if (form.checkValidity() === true) {
-      setValidated(true);
-      setButtonDisabled(false)
+    if (form.checkValidity() === false) {
+      event.preventDefault()
+      event.stopPropagation()
     }
+    setValidated(true)
+
     const data = {
       name: name,
       email: mail,
       mobileNumber: phone,
       orderType: dropdownTitle,
     }
-    try {
-      const response = await axios.post('http://localhost:5000/form', data, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      setMessage('Ваш запрос успешно доставлен');
-      console.log(response);
-    } catch (error) {
-      setMessage('Произошла ошибка при отправке запроса. Пожалуйста, попробуйте еще раз.');
-      console.error(error);
+    if (form.checkValidity() === true) {
+      try {
+        const response = await axios.post('http://localhost:5000/form', data, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        setMessage('Ваш запрос успешно доставлен');
+        console.log(response);
+      } catch (error) {
+        setMessage('Произошла ошибка при отправке запроса. Пожалуйста, попробуйте еще раз.');
+        console.error(error);
+      }
     }
   }
+
 
   const handleClose = () => {
     setShow(false);

@@ -1,3 +1,5 @@
+const fs = require('node:fs')
+const path = require('node:path');
 const express = require("express"); //Строка 1
 const cors = require('cors')
 const app = express(); //Строка 2
@@ -15,5 +17,11 @@ app.get("/express_backend", (req, res) => {
 }); //Строка 11
 app.post('/form', (req, res) => {
   console.log(req.body);
+  const filePath = path.join(__dirname, 'database.json');
+  fs.writeFile(filePath, JSON.stringify(req.body, null, 2), error => {
+    if (error) {
+      console.error(error);
+    }
+  })
   // Здесь логика обработки POST-запроса
 });
