@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import { Dropdown } from "react-bootstrap";
 import DropdownButton from "react-bootstrap/DropdownButton";
-import axios from "axios";
+import postFormApi from "../../src/apiForm";
 const ModalWindow = (props: any) => {
   const [show, setShow] = useState(true);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
@@ -44,13 +44,9 @@ const ModalWindow = (props: any) => {
     }
     if (form.checkValidity() === true) {
       try {
-        const response = await axios.post('http://localhost:5000/form', data, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
+        await postFormApi(data);
         setMessage('Ваш запрос успешно доставлен');
-        console.log(response);
+
       } catch (error) {
         setMessage('Произошла ошибка при отправке запроса. Пожалуйста, попробуйте еще раз.');
         console.error(error);
