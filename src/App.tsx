@@ -23,7 +23,7 @@ function App() {
     return body;
   };
 
-  // получение GET маршрута с сервера Express, который соответствует GET из server.js
+  // получение GET маршрута с сервера Express, который соответствует GET из index.js
   useEffect(() => {
     callBackendAPI()
       .then((res) => setState(res.express))
