@@ -51,7 +51,7 @@ const ModalWindow = (props: any) => {
     event.preventDefault();
     setVariant(event.target.title);
   };
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   return (
     <>
       <Modal show={show} onHide={handleClose}>
