@@ -1,5 +1,6 @@
 const fs = require('node:fs')
 const path = require('node:path');
+const pool = require('./config/db');
 const express = require("express"); //Строка 1
 const cors = require('cors')
 const app = express(); //Строка 2
@@ -7,6 +8,13 @@ const port = process.env.PORT || 5000; //Строка 3
 app.use(cors());
 app.use(express.json());
 
+pool.query('SELECT NOW()', (err, res) => {
+  if (err) {
+    console.error('Error connecting to the database', err.stack);
+  } else {
+    console.log('Connected to the database:', res.rows);
+  }
+});
 // Сообщение о том, что сервер запущен и прослушивает указанный порт
 app.listen(port, () => console.log(`Listening on port ${port}`)); //Строка 6
 
