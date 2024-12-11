@@ -7,9 +7,9 @@ const postFormApi = async (data: object) => {
         'Content-Type': 'application/json'
       }
     });
-    console.log(response);
+    return response
   } catch (error) {
     console.error(error);
   }
-};
+}
 export default postFormApi;

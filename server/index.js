@@ -40,9 +40,14 @@ app.post('/form', (req, res) => {
 
   pool.query('INSERT INTO guests (name, email, phone_number, order_type) VALUES ($1, $2, $3, $4) RETURNING *', [name, email, mobileNumber, orderType], (err, result) => {
     if (err) {
+      res.send({ express: 'Проблемы с сервером, пожалуйста отправьте форму повторно' })
       return console.error(err.message);
+    } else {
+      console.log({ express: 'Ваш запрос доставлен' })
+      res.send({ express: 'Ваш запрос доставлен' })
     };
   })
+
 });
 /*router.post('/form', controller.createUser);
 module.exports = router;*/ //здесь логика маршрутизации, пока в разработке 

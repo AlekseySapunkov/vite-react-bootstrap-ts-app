@@ -15,9 +15,9 @@ function App() {
   const [state, setState] = useState(null);
 
   const callBackendAPI = async () => {
-    const response = await fetch("http://localhost:5100/express_backend");
-    const body = await response.json();
-    if (response.status !== 200) {
+    const connectionResponse = await fetch("http://localhost:5100/express_backend");
+    const body = await connectionResponse.json();
+    if (connectionResponse.status !== 200) {
       throw Error(body.message);
     }
     return body;

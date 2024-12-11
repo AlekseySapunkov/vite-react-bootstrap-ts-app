@@ -9,8 +9,8 @@ const ModalWindow = (props: any) => {
   const [show, setShow] = useState(true);
   const [dropdownTitle, setVariant] = useState("Варианты");
   const [validated, setValidated] = useState(false);
-  const [message, setMessage] = useState("");
-  const [name, setName] = useState("");
+  const [message, setMessage] = useState(null);
+  const [name, setName] = useState({});
   const [mail, setMail] = useState('');
   const [phone, setPhone] = useState('');
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,6 +28,7 @@ const ModalWindow = (props: any) => {
     }
   }
   const handleSubmit = async (event: any) => {
+    event.preventDefault()
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault()
@@ -43,11 +44,9 @@ const ModalWindow = (props: any) => {
     }
     if (form.checkValidity() === true) {
       try {
-        await postFormApi(data);
-        setMessage('Ваш запрос успешно доставлен');
-
+        const apiResponse = await postFormApi(data);
+        setMessage(apiResponse.data.express)
       } catch (error) {
-        setMessage('Произошла ошибка при отправке запроса. Пожалуйста, попробуйте еще раз.');
         console.error(error);
       }
     }
