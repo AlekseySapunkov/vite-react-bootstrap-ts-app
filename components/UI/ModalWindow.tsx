@@ -10,7 +10,7 @@ const ModalWindow = (props: any) => {
   const [dropdownTitle, setVariant] = useState("Варианты");
   const [validated, setValidated] = useState(false);
   const [message, setMessage] = useState(null);
-  const [name, setName] = useState({});
+  const [name, setName] = useState('');
   const [mail, setMail] = useState('');
   const [phone, setPhone] = useState('');
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
