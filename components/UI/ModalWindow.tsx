@@ -51,8 +51,6 @@ const ModalWindow = (props: any) => {
       }
     }
   }
-
-
   const handleClose = () => {
     setShow(false);
     props.setModalVisible();
