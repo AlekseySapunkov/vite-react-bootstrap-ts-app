@@ -123,8 +123,8 @@ const ModalWindow = (props: ModalWindowProps) => {
               Пожалуйста напишите корректный Телефон
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
-            <Form.Label>Вариант заказа</Form.Label>
+          <Form.Group className="mb-3">
+            <Form.Label htmlFor="dropdown-item-button">Вариант заказа</Form.Label>
             <DropdownButton
               id="dropdown-item-button"
               title={dropdownTitle}
@@ -153,6 +153,8 @@ const ModalWindow = (props: ModalWindowProps) => {
               label="Выражаю согласие с тем что мои данные будут обработаны сторонним лицом"
               feedback="Поставьте галочку если согласны"
               feedbackType="invalid"
+              name="agreement"
+              id="option"
             />
           </Form.Group>
           <Button variant="primary" type="submit" id="submitButton">
