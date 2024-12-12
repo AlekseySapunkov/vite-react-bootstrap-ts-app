@@ -45,7 +45,7 @@ const ModalWindow = (props: any) => {
     if (form.checkValidity() === true) {
       try {
         const apiResponse = await postFormApi(data);
-        setMessage(apiResponse.data.express)
+        setMessage(apiResponse?.data?.express)
       } catch (error) {
         console.error(error);
       }
