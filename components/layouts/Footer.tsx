@@ -1,5 +1,8 @@
 import styles from "./Footer.module.scss"
-const Footer = (props: any) => {
+interface FooterProps {
+  setModalVisible: () => void;
+}
+const Footer = (props: FooterProps) => {
   const modalHandler = () => {
     props.setModalVisible();
   }
