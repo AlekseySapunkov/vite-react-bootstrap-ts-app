@@ -5,7 +5,10 @@ import { Row } from "react-bootstrap";
 import Col from 'react-bootstrap/Col';
 import styles from "./Contacts.module.scss"
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
-const Contacts = (props: any) => {
+interface ContactsProps {
+  setModalVisible: () => void;
+}
+const Contacts = (props: ContactsProps) => {
   const openModal = () => {
     props.setModalVisible();
   }
