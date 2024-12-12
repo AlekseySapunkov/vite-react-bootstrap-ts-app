@@ -99,7 +99,7 @@ const ModalWindow = (props: any) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
               <Form.Label>Телефон</Form.Label>
-              <Form.Control type="tel" placeholder="89345678789" title="phone" onChange={handleInput} required />
+              <Form.Control type="tel" minLength={11} placeholder="89345678789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="phone" onChange={handleInput} required />
               <Form.Control.Feedback type="invalid">
                 Пожалуйста напишите корректный Телефон
               </Form.Control.Feedback>
