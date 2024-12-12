@@ -2,7 +2,7 @@
 import axios from "axios";
 const postFormApi = async (data: object) => {
   try {
-    const response = await axios.post('http://localhost:5100/form', data, {
+    const response = await axios.post('http://localhost:5100/guests', data, {
       headers: {
         'Content-Type': 'application/json'
       }

@@ -35,7 +35,7 @@ app.get("/express_backend", (req, res) => {
   })
   // Здесь логика обработки пробного POST-запроса с записью в файл
 });*/
-app.post('/form', (req, res) => {
+app.post('/guests', (req, res) => {
   const { name, email, mobileNumber, orderType } = req.body;
 
   pool.query('INSERT INTO guests (name, email, phone_number, order_type) VALUES ($1, $2, $3, $4) RETURNING *', [name, email, mobileNumber, orderType], (err, result) => {
