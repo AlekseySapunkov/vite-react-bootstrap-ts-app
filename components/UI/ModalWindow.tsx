@@ -88,6 +88,7 @@ const ModalWindow = (props: ModalWindowProps) => {
               type="email"
               placeholder="name@example.com"
               title="email"
+              maxLength={20}
               onChange={handleInput}
               required
               autoFocus
@@ -103,6 +104,7 @@ const ModalWindow = (props: ModalWindowProps) => {
               title="name"
               placeholder="Иванов Иван"
               onChange={handleInput}
+              maxLength={30}
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -114,6 +116,7 @@ const ModalWindow = (props: ModalWindowProps) => {
             <Form.Control
               type="tel"
               minLength={10}
+              maxLength={15}
               placeholder="89345678789"
               title="phone"
               onChange={handleInput}
