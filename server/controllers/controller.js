@@ -12,10 +12,11 @@ exports.getUsers = async (req, res) => {
 exports.createUser = async (req, res) => {
     const { name, email, mobileNumber, orderType } = req.body;
     try {
-        const result = await pool.query('INSERT INTO guests (name, email, phone_number, order_ype) VALUES ($1, $2, $3, $4) RETURNING *', [name, email, mobileNumber, orderType],);
-        res.status(201).json(result.rows[0]);
+        await pool.query('INSERT INTO guests (name, email, phone_number, order_ype) VALUES ($1, $2, $3, $4) RETURNING *', [name, email, mobileNumber, orderType],);
+        res.send({ express: 'Ваш запрос доставлен' })
     } catch (err) {
         res.status(500).json({ error: err.message });
+        res.send({ express: 'Проблемы с сервером, пожалуйста отправьте форму повторно' });
     }
 };
 
